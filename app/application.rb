@@ -9,8 +9,11 @@ class Application
         item.price
       else
         resp.route = 400
+      end
     else
       resp.route = 404
+    end
   end
 
 end
+

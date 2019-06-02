@@ -9,7 +9,7 @@ class Application
       binding.pry
       found = Item.all.find {|i| i.name == item}
       if found
-        found.price
+        resp.write found.price
       else
         resp.write "Item not found"
         resp.status = 400

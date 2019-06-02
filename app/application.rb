@@ -4,7 +4,7 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path.match(/items/)
-      item = path.split("/items/").last
+      item = req.path.split("/items/").last
       if Item.all.include?(item)
         item.price
       else

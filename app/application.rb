@@ -8,6 +8,7 @@ class Application
       if Item.all.include?(item)
         Item.all.find {|item| item.name == item}.price
       else
+        resp.write "Item not found"
         resp.status = 400
       end
     else

@@ -5,6 +5,10 @@ class Application
 
     if req.path.match(/items/)
       item = path.split("/items/").last
+      if Item.all.include?(item)
+        item.price
+      else
+        resp.route = 400
     else
       resp.route = 404
   end

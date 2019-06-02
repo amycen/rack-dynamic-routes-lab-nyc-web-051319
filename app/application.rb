@@ -6,7 +6,7 @@ class Application
     if req.path.match(/items/)
       item = req.path.split("/items/").last
       if Item.all.include?(item)
-        Item.all.find {|item| item.name == item}.price
+        Item.all.find {|i| i.name == item}.price
       else
         resp.write "Item not found"
         resp.status = 400

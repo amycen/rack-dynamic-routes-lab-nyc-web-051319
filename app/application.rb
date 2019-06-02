@@ -1,3 +1,4 @@
+require 'pry'
 class Application
   def call(env)
     resp = Rack::Response.new
@@ -5,6 +6,7 @@ class Application
 
     if req.path.match(/items/)
       item = req.path.split("/items/").last
+      binding.pry
       found = Item.all.find {|i| i.name == item}
       if found
         found.price
